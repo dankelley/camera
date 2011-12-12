@@ -9,5 +9,15 @@
 
     > 2*atan(7.144 / 2 / 10.87) * 180/pi
     [1] 36.38217
-fit.R: fits points to map, makes 4 panel plot
-fit2.R: as fit.R but 3 panel plot including image
+
+
+# File list
+
+camera.R
+    First tests of fitting pixel to xy.
+fit1.R
+    Demonstrates fitting of pixel to xy, with ground control points.
+fit2.R
+    As fit1.R but shows photo (slow).
+
+
