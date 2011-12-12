@@ -51,3 +51,5 @@ plot(pred$x, pred$y, asp=1, xlab="inferred x [m]", ylab="inferred y [m]",
 points(0, 0, pch='x')
 mtext(sprintf("ele %.0fm   alt %.0fdeg   azi %.0fdeg   fov %.0fdeg",
               elevation, altitude, azimuth, v), line=-1, cex=.7)
+print(o)
+
