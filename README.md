@@ -13,13 +13,10 @@
 
 # File list
 
-camera.R
-    First tests of fitting pixel to xy.
+* ``camera.R``: First test of fitting pixel to xy.
 
-fit1.R
-    Demonstrates fitting of pixel to xy, with ground control points.
+* ``fit1.R``: Demonstration of fitting of pixel to xy, with ground control points.
 
-fit2.R
-    As fit1.R but shows photo (slow).
+* ``fit2.R``: As fit1.R but shows photo (slow).
 
 
