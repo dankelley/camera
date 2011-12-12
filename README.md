@@ -8,6 +8,7 @@
 * therefore angle of view alpha = 2*atan(d / (2f)) is
 
     > 2*atan(7.144 / 2 / 10.87) * 180/pi
+
     [1] 36.38217
 
 
