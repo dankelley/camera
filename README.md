@@ -20,4 +20,10 @@
 
 * ``fit2.R``: As fit1.R but shows photo (slow).
 
+* ``P1020248-gcp.dat``: ground-control points, including pixels from
+  P1020248.jpg as well as latlon pairs from google earth (see ``latlon-*.png``)
+
+* ``P1020248.jpg``: a photo
+
+* ``latlon-*.png``: snapshots of google earth latlon, showing control points
 
