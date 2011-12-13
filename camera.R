@@ -14,6 +14,6 @@ D <- proj(i, j, elevation=10, altitude=0, azimuth=0, Vi, Ni, Nj)
 par(mfrow=c(1,2), mar=c(3,3,1,1), mgp=c(2,.7,0), pch=3)
 plot(i, j, asp=1, col=col, xlab="pixel i", ylab="pixel j")
 ## sample to avoid overplotting
-r <- sample(1:length(D$Di))
-plot((D$Di)[r], (D$Dj)[r], asp=1, col=col[r], xlab="x [m]", ylab="y [m]",
+r <- sample(1:length(D$x))
+plot((D$x)[r], (D$y)[r], asp=1, col=col[r], xlab="x [m]", ylab="y [m]",
      ylim=c(0, 1e3))
