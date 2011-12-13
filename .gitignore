@@ -1,4 +1,15 @@
+<<<<<<< HEAD
+=======
+.DS_Store
+*swp
+>>>>>>> ec5331293f422727303205a99f0cf168dc83ff36
 *~
 Rplots.pdf
 fit*.png
 camera*.png
+<<<<<<< HEAD
+=======
+*.out
+.R*
+photo-with-gcp.png
+>>>>>>> ec5331293f422727303205a99f0cf168dc83ff36
