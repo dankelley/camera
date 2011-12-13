@@ -1,6 +1,4 @@
-png("fit2.png", width=1200, height=300)
 library(oce)
-library(ReadImages)
 source('proj.R')
 cameraLat <- 44.634719170
 cameraLon <- -63.571794927
@@ -10,9 +8,8 @@ imageHeight <- 1680
 gcp <- read.table('P1020248-gcp.dat', header=TRUE)
 gcp$i <- gcp$xpix
 gcp$j <- imageHeight - gcp$ypix
-xy <- geodXy(gcp$lat, gcp$lon, cameraLat, cameraLon)
 
-par(mfrow=c(1,3))
+par(mfrow=c(2,2))
 
 ## lat-lon map
 plot(coastlineHalifax, center=c(-63.56, 44.640), span=4)
@@ -20,11 +17,10 @@ points(gcp$lon, gcp$lat)
 points(cameraLon, cameraLat, pch='x')
 ##text(gcp$lon, gcp$lat, 1:length(gcp$lon), pos=1)
 
-im <- read.jpeg("P1020248.jpg")
-plot(im)
-points(gcp$i, gcp$j, col='white', pch=20, cex=3)
-points(gcp$i, gcp$j, col='red', pch=20, cex=2)
-points(gcp$i, gcp$j, col='white', pch=20, cex=1)
+## xy map
+xy <- geodXy(gcp$lat, gcp$lon, cameraLat, cameraLon)
+plot(xy, asp=1, xlab="map x [m]", ylab="map y [m]", xlim=c(0,2500))
+points(0, 0, pch='x')
 
 elevationVec <- altitudeVec <- azimuthVec <- vVec <- NULL
 misfit <- function(p)
@@ -49,3 +45,11 @@ predLon <- cameraLon + pred$x / 111e3 / cos(cameraLat * pi / 180)
 plot(coastlineHalifax, center=c(-63.56, 44.640), span=4)
 points(predLon, predLat)
 points(cameraLon, cameraLat, pch='x')
+
+plot(pred$x, pred$y, asp=1, xlab="inferred x [m]", ylab="inferred y [m]",
+     xlim=c(0,2400))
+points(0, 0, pch='x')
+mtext(sprintf("ele %.0fm   alt %.0fdeg   azi %.0fdeg   fov %.0fdeg",
+              elevation, altitude, azimuth, v), line=-1, cex=.7)
+print(o)
+
