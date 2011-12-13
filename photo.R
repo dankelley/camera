@@ -5,7 +5,7 @@ source('proj.R')
 data(coastlineHalifax)
 ## camera at 44.634719170 -63.571794927
 imageHeight <- 1680
-gcp <- read.table('gcp-2010248.dat', header=TRUE)
+gcp <- read.table('P1020248-gcp.dat', header=TRUE)
 gcp$i <- gcp$xpix
 gcp$j <- imageHeight - gcp$ypix
 
