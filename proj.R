@@ -24,4 +24,8 @@ proj <- function(i, j,
     }
     list(i=i, j=j, x=x, y=y)
 }
+cameraLat <- 44.634719170
+cameraLon <- -63.571794927
+imageHeight <- 1680
+imageWidth <- 2240
 
