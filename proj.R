@@ -1,11 +1,11 @@
 proj <- function(i, j,
-                 elevation, altitude, azimuth, v, # par
+                 elevation, altitude, azimuth, fov, # par
                  Ni=2240, Nj=1680,
                  trim=FALSE)
 {
     ## degrees per pixel in x and y directions (i and j indices)
-    dppx <- v / Ni
-    dppy <- v / Nj
+    dppx <- fov / Ni
+    dppy <- fov / Nj
     ## x and y from geometry
     theta <- altitude + (j - Nj / 2) * dppy
     y <- -elevation / tan(theta * pi / 180)
@@ -24,4 +24,8 @@ proj <- function(i, j,
     }
     list(i=i, j=j, x=x, y=y)
 }
+cameraLat <- 44.634719170
+cameraLon <- -63.571794927
+imageHeight <- 1680
+imageWidth <- 2240
 
