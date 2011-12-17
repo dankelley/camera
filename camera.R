@@ -2,8 +2,6 @@ if (!interactive())
     png("camera.png", width=800, height=400)
 library(oce)
 source('proj.R')
-cameraLat <- 44.634719170
-cameraLon <- -63.571794927
 Ni <- 50
 Nj <- 50
 i <- rep(1:Ni, each=Nj)
