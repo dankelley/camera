@@ -15,7 +15,7 @@ xy <- geodXy(gcp$lat, gcp$lon, cameraLat, cameraLon)
 par(mfrow=c(1,3))
 
 ## lat-lon map
-plot(coastlineHalifax, center=c(-63.56, 44.640), span=4)
+plot(coastlineHalifax, clon=-63.56, clat=44.640, span=4)
 points(gcp$lon, gcp$lat)
 points(cameraLon, cameraLat, pch='x')
 ##text(gcp$lon, gcp$lat, 1:length(gcp$lon), pos=1)
@@ -46,6 +46,6 @@ v <- o$par[4]
 pred <- proj(gcp$i, gcp$j, elevation, altitude, azimuth, v)
 predLat <- cameraLat + pred$y / 111e3
 predLon <- cameraLon + pred$x / 111e3 / cos(cameraLat * pi / 180)
-plot(coastlineHalifax, center=c(-63.56, 44.640), span=4)
+plot(coastlineHalifax, clon=-63.56, clat=44.640, span=4)
 points(predLon, predLat)
 points(cameraLon, cameraLat, pch='x')
